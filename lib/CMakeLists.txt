@@ -59,7 +59,3 @@ install(TARGETS gnuradio-ysf
     RUNTIME DESTINATION bin              # .dll file
 )
 
-########################################################################
-# Build and register unit test
-########################################################################
-#removed
