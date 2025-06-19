@@ -1,7 +1,7 @@
 # gr-ysf
 
-### This is a kinda hacky fix to get [gr-ysf](https://github.com/HB9UF/gr-ysf) built on modern systems, there are some small code changes, and I removed the unit tests which used deprecated libraries and I didn't want to re-write them.
-
+# This is a kinda hacky fix to get [gr-ysf](https://github.com/HB9UF/gr-ysf) built on modern systems, there are some small code changes, and I removed the unit tests which used deprecated libraries and I didn't want to re-write them.
+# Unfortunatly this still requires an old version of gnu radio b/c ir produces xml based blocks, which are now deprecated.
 
 
 
