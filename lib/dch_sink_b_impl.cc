@@ -31,8 +31,8 @@ namespace ysf {
 dch_sink_b::sptr
 dch_sink_b::make()
 {
-  return gnuradio::get_initial_sptr
-    (new dch_sink_b_impl());
+  return boost::shared_ptr<dch_sink_b>(new dch_sink_b_impl());
+
 }
 
 dch_sink_b_impl::dch_sink_b_impl()

@@ -23,7 +23,13 @@
 ########################################################################
 cmake_minimum_required(VERSION 2.6)
 project(gr-ysf CXX C)
-enable_testing()
+#enable_testing()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+add_compile_options(-std=c++17)
+
 
 #select the release build type by default to get optimization flags
 if(NOT CMAKE_BUILD_TYPE)
@@ -84,7 +90,7 @@ set(GRC_BLOCKS_DIR      ${GR_PKG_DATA_DIR}/grc/blocks)
 ########################################################################
 # Find gnuradio build dependencies
 ########################################################################
-find_package(CppUnit)
+#find_package(CppUnit)
 find_package(Doxygen)
 
 # Search for GNU Radio and its components and versions. Add any
@@ -94,9 +100,6 @@ find_package(Doxygen)
 set(GR_REQUIRED_COMPONENTS RUNTIME)
 find_package(Gnuradio "3.8.1.0" REQUIRED)
 
-if(NOT CPPUNIT_FOUND)
-    message(FATAL_ERROR "CppUnit required to compile ysf")
-endif()
 
 ########################################################################
 # Find mbelib

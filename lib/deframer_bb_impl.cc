@@ -25,6 +25,7 @@
 #include <cstdbool>
 #include <gnuradio/io_signature.h>
 #include "deframer_bb_impl.h"
+#include <boost/bind.hpp>
 
 // Enumerating output streams
 const int FICH_STREAM = 0;
@@ -39,8 +40,7 @@ namespace gr {
     deframer_bb::sptr
     deframer_bb::make(int threshold)
     {
-      return gnuradio::get_initial_sptr
-        (new deframer_bb_impl(threshold));
+      return boost::shared_ptr<deframer_bb>(new deframer_bb_impl(threshold));
     }
 
     deframer_bb_impl::deframer_bb_impl(int threshold)
@@ -54,7 +54,7 @@ namespace gr {
         // FIXME: deal with threshold (issue #20)
         
         message_port_register_in(pmt::mp("demux_instruction"));
-        set_msg_handler(pmt::mp("demux_instruction"), boost::bind(&deframer_bb_impl::queue, this, _1));
+        set_msg_handler(pmt::mp("demux_instruction"), boost::bind(&deframer_bb_impl::queue, this, boost::placeholders::_1));
     }
 
     deframer_bb_impl::~deframer_bb_impl()

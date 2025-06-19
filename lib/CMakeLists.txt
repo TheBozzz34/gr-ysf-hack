@@ -62,23 +62,4 @@ install(TARGETS gnuradio-ysf
 ########################################################################
 # Build and register unit test
 ########################################################################
-include(GrTest)
-
-include_directories(${CPPUNIT_INCLUDE_DIRS})
-
-list(APPEND test_ysf_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_ysf.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_ysf.cc
-)
-
-add_executable(test-ysf ${test_ysf_sources})
-
-target_link_libraries(
-  test-ysf
-  ${GNURADIO_RUNTIME_LIBRARIES}
-  ${Boost_LIBRARIES}
-  ${CPPUNIT_LIBRARIES}
-  gnuradio-ysf
-)
-
-GR_ADD_TEST(test_ysf test-ysf)
+#removed

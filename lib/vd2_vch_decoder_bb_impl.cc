@@ -31,8 +31,8 @@ namespace gr {
     vd2_vch_decoder_bb::sptr
     vd2_vch_decoder_bb::make()
     {
-      return gnuradio::get_initial_sptr
-        (new vd2_vch_decoder_bb_impl());
+      return boost::shared_ptr<vd2_vch_decoder_bb>(new vd2_vch_decoder_bb_impl());
+
     }
 
     vd2_vch_decoder_bb_impl::vd2_vch_decoder_bb_impl()

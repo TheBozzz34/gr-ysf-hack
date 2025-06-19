@@ -32,8 +32,8 @@ namespace gr {
     mbelib_block_bf::sptr
     mbelib_block_bf::make(std::string codec)
     {
-      return gnuradio::get_initial_sptr
-        (new mbelib_block_bf_impl(codec));
+      return boost::shared_ptr<mbelib_block_bf>(new mbelib_block_bf_impl(codec));
+
     }
     
     mbelib_block_bf_impl::mbelib_block_bf_impl(std::string codec)

@@ -32,8 +32,7 @@ namespace gr {
     fich_sink_b::sptr
     fich_sink_b::make()
     {
-      return gnuradio::get_initial_sptr
-        (new fich_sink_b_impl());
+      return boost::shared_ptr<fich_sink_b>(new fich_sink_b_impl());
     }
 
     fich_sink_b_impl::fich_sink_b_impl()
