@@ -1,4 +1,12 @@
 # gr-ysf
+
+### This is a kinda hacky fix to get [gr-ysf](https://github.com/HB9UF/gr-ysf) built on modern systems, there are some small code changes, and I removed the unit tests which used deprecated libraries and I didn't want to re-write them.
+
+
+
+
+
+
 GNU Radio modules for decoding Yaesu System Fusion C4FM packets
 
 See the following link for information on the project:
